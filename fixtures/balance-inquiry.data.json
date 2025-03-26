@@ -1,0 +1,18 @@
+{
+    "balance": {
+        "path": "/v1.0/balance-inquiry",
+        "validAccount": "mer_12345678d9abcde",
+        "invalidAccount": "invalid_account",
+        "emptyAccount": "",
+        "expectedResponse": {
+            "responseCode": "2001100",
+            "responseMessage": "Successful",
+            "accountInfos": [{
+                "availableBalance": {
+                    "currency": "IDR",
+                    "value": "999999999999.00"
+                }
+            }]
+        }
+    }
+}

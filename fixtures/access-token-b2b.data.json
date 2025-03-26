@@ -1,0 +1,12 @@
+{
+    "auth": {
+        "grantType": "client_credentials",
+        "path": "/v1.0/access-token/b2b",
+        "channelId": "95521",
+        "expectedResponse": {
+            "responseCode": "2007300",
+            "responseMessage": "Successful",
+            "tokenType": "BearerToken"
+        }
+    }
+}

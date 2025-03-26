@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "accountInfos": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "availableBalance": {
+              "type": "object",
+              "properties": {
+                "currency": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "currency",
+                "value"
+              ]
+            }
+          },
+          "required": [
+            "availableBalance"
+          ]
+        }
+      ]
+    },
+    "responseCode": {
+      "type": "string"
+    },
+    "responseMessage": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accountInfos",
+    "responseCode",
+    "responseMessage"
+  ]
+}

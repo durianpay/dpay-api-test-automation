@@ -1,0 +1,8 @@
+{
+    "account": {
+        "path": "/v1.0/account-inquiry-external",
+        "beneficiaryAccountNo": "087783146492",
+        "beneficiaryBankCode": "002",
+        "xExternalId": "200001"
+    }
+}
