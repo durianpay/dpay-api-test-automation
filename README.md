@@ -47,7 +47,6 @@ dpay-api-test-automation/
    - Organized by domain/feature for better management
 
 4. **Utils**
-   - `api.request.js`: Handles HTTP requests, headers, and error handling
    - `signature.js`: Manages authentication and signature generation
 
 ### Test Execution Flow
@@ -89,12 +88,7 @@ npm test
 
 ### Run specific test suite:
 ```bash
-npx jest __tests__/snap-disbursement/balance-inquiry.spec.js
-```
-
-### Run with specific configuration:
-```bash
-NODE_ENV=staging npm test
+npm test __tests__/snap-disbursement/balance-inquiry.spec.js
 ```
 
 ## How to Contribute
@@ -125,19 +119,19 @@ NODE_ENV=staging npm test
 - Include valid and invalid test scenarios
 
 Example fixture file:
-```javascript
-// fixtures/new-feature.data.js
-module.exports = {
-  featureName: {
-    validScenario: {
-      param1: 'value1',
-      param2: 'value2'
+```json
+// fixtures/new-feature.data.json
+{
+  "featureName": {
+    "validScenario": {
+      "param1": "value1",
+      "param2": "value2"
     },
-    invalidScenario: {
-      param1: 'invalid-value'
+    "invalidScenario": {
+      "param1": "invalid-value"
     }
   }
-};
+}
 ```
 
 ### Step 3: Create or Update Page Objects
@@ -209,14 +203,10 @@ describe('New Feature', () => {
 - **Keep Tests Independent**: Each test should run independently of others
 - **Use Clear Assertions**: Make assertions specific and descriptive
 - **Handle Authentication**: Reuse the access token where possible
-- **Organize by Domain**: Keep tests organized by business domain or feature
+- **Organize by Domain**: Keep tests organized by API business domain
 - **Document Test Cases**: Each test should have a clear purpose and description
 
 ## Troubleshooting
-- Check configuration in `config.js`
+- Review logs for detailed error information
 - Verify API endpoints and credentials
 - Check network connectivity to API services
-- Review logs for detailed error information
-
-## License
-[Include license information here] 
