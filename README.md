@@ -49,15 +49,6 @@ dpay-api-test-automation/
 4. **Utils**
    - `signature.js`: Manages authentication and signature generation
 
-### Test Execution Flow
-
-1. Test file is executed by Jest
-2. Test case initializes necessary page objects
-3. Page object uses fixtures for test data
-4. API requests are made through utility methods
-5. Responses are validated against expected results
-6. Reports are generated with detailed results
-
 ## Setup and Installation
 
 ### Prerequisites
