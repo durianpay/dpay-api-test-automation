@@ -1,8 +1,8 @@
 // pages/auth.page.js
-const config = require('../config');
-const authData = require('../fixtures/access-token-b2b.data');
-const BasePage = require('./base.page');
-const { generateAuthSignature, generateTimestamp } = require('../utils/signature');
+const config = require('../../config');
+const authData = require('../../fixtures/snap-disbursement/access-token-b2b.data');
+const BasePage = require('../base.page');
+const { generateAuthSignature, generateTimestamp } = require('../../utils/signature');
 
 class AccessTokenB2BPage extends BasePage {
     async getAccessToken() {

@@ -1,7 +1,6 @@
 // __tests__/integration/auth.spec.js
-const AuthPage = require('../../pages/access-token-b2b.page');
-const authData = require('../../fixtures/access-token-b2b.data');
-
+const AuthPage = require('../../pages/snap-disbursement/access-token-b2b.page');
+const authData = require('../../fixtures/snap-disbursement/access-token-b2b.data');      
 describe('Access Token B2B', () => {
     beforeAll(async () => {
         // Initialize setup if needed
