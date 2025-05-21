@@ -74,12 +74,20 @@ dpay-api-test-automation/
 
 ### Run all tests:
 ```bash
-npm test
+npm run test
+```
+
+### Run specific tag:
+```bash
+npm run test:tag @snap-disbursement
+
+#To run multiple tags
+npm run test:tag "@snap-disbursement|@balance-inquiry"
 ```
 
 ### Run specific test suite:
 ```bash
-npm test __tests__/snap-disbursement/balance-inquiry.spec.js
+npm run test __tests__/snap-disbursement/balance-inquiry.spec.js
 ```
 
 ## How to Contribute
