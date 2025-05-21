@@ -3,7 +3,7 @@ const BalanceInquiryPage = require('../../pages/snap-disbursement/balance-inquir
 const config = require('../../config');
 const balanceData = require('../../fixtures/snap-disbursement/balance-inquiry.data');
 
-describe('Balance Inquiry', () => {
+describe('Balance Inquiry @snap-disbursement @disbursement_service @balance-inquiry', () => {
     let balancePage;
 
     beforeAll(async () => {

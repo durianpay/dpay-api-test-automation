@@ -3,7 +3,7 @@ const AccountInquiryExternalPage = require('../../pages/snap-disbursement/accoun
 const config = require('../../config');
 const accountInquiryExternalData = require('../../fixtures/snap-disbursement/account-inquiry-external.data');
 
-describe('Account Inquiry External', () => {
+describe('Account Inquiry External @snap-disbursement @disbursement_service @account-inquiry', () => {
     let accountInquiryPage;
 
     beforeAll(async () => {
