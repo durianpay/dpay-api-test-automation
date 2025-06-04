@@ -11,7 +11,7 @@ on:
 
 jobs:
   run-tests:
-    runs-on: runner-qa
+    runs-on: qa
 
     steps:
       - name: Checkout code
