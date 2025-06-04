@@ -1,33 +1,36 @@
-name: QA Test
+name: QA Test Runner
 
 on:
   workflow_dispatch:
     inputs:
-      env:
+      services:
+        description: 'Comma-separated service tags (e.g. disbursement_service,dpay-core-banking)'
         required: true
-        type: string
-      runner_label:
-        required: false
-        default: "runner-qa"
-        type: string
-      service:
-        required: true
-        type: string
+  repository_dispatch:
+    types: [trigger-qa-tests]
 
 jobs:
   run-tests:
-    runs-on: ${{ inputs.runner_label }}
+    runs-on: runner-qa
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' 
+          node-version: '18'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run QA Test for Service
-        run: npm run test:tag @${{ inputs.service }}
+      - name: Run test tags
+        run: |
+          TAGS="${{ github.event.inputs.services || github.event.client_payload.services }}"
+          echo "Running QA tests for tags: $TAGS"
+          IFS=',' read -ra TAG_ARRAY <<< "$TAGS"
+          for tag in "${TAG_ARRAY[@]}"; do
+            echo "Executing: npm run test:tag @$tag"
+            npm run test:tag "@$tag"
+          done
