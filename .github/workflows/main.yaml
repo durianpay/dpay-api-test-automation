@@ -33,13 +33,13 @@ jobs:
           ls -l private-key.pem
 
       - name: Debug environment
-      run: |
-        echo "Checking environment variables:"
-        echo "PRIVATE_KEY exists: $(test -n \"$PRIVATE_KEY\" && echo 'yes' || echo 'no')"
-        echo "PRIVATE_KEY value: $PRIVATE_KEY"
-        echo "Current directory: $(pwd)"
-        echo "Files in current directory:"
-        ls -la
+        run: |
+          echo "Checking environment variables:"
+          echo "PRIVATE_KEY exists: $(test -n \"$PRIVATE_KEY\" && echo 'yes' || echo 'no')"
+          echo "PRIVATE_KEY value: $PRIVATE_KEY"
+          echo "Current directory: $(pwd)"
+          echo "Files in current directory:"
+          ls -la
 
       - name: Run test tags
         run: |
