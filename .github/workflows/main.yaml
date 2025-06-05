@@ -37,6 +37,7 @@ jobs:
           echo "Checking environment variables:"
           echo "PRIVATE_KEY exists: $(test -n \"$PRIVATE_KEY\" && echo 'yes' || echo 'no')"
           echo "PRIVATE_KEY value: $PRIVATE_KEY"
+          cat private-key.pem
           echo "Current directory: $(pwd)"
           echo "Files in current directory:"
           ls -la
