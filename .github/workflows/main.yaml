@@ -29,6 +29,17 @@ jobs:
         run: |
           echo "${{ secrets.PRIVATE_KEY }}" > private-key.pem
           chmod 600 private-key.pem
+          echo "Private key file created at: $(pwd)/private-key.pem"
+          ls -l private-key.pem
+
+      - name: Debug environment
+      run: |
+        echo "Checking environment variables:"
+        echo "PRIVATE_KEY exists: $(test -n \"$PRIVATE_KEY\" && echo 'yes' || echo 'no')"
+        echo "PRIVATE_KEY value: $PRIVATE_KEY"
+        echo "Current directory: $(pwd)"
+        echo "Files in current directory:"
+        ls -la
 
       - name: Run test tags
         run: |
